@@ -4,6 +4,7 @@
  * @n: integer
  * Return: void
 */
+stack_t *stack = NULL;
 void push(int n)
 {
 stack_t *new_node = malloc(sizeof(stack_t));
@@ -19,7 +20,6 @@ stack = new_node;
 /**
  * pop - remove the element from the top of the stack
  * Return: integer
- *
 */
 int pop(void)
 {
