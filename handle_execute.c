@@ -38,6 +38,10 @@ else if (strcmp(instruction, "pint") == 0)
 {
 pint(line_no);
 }
+else if (strcmp(instruction, "swap") == 0)
+{
+swap(line_no);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_no, instruction);

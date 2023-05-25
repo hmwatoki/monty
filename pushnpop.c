@@ -69,3 +69,25 @@ exit(EXIT_FAILURE);
 printf("%d\n", stack->n);
 pop(line_no);
 }
+/**
+ * swap - swap the top two elements of the stack
+ * @line_no: line number
+ * Return: void
+*/
+/**
+ * swap - swaps the top two elements of the stack
+ * @line_no: line number
+ * Return: void
+ */
+void swap(int line_no)
+{
+int temp;
+if (!stack || !stack->next)
+{
+fprintf(stderr, "L%d: can't swap, stack too short\n", line_no);
+exit(EXIT_FAILURE);
+}
+temp = stack->n;
+stack->n = stack->next->n;
+stack->next->n = temp;   
+}
