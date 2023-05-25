@@ -54,3 +54,17 @@ printf("%d\n", current->n);
 current = current->prev;
 }
 }
+/**
+ * pint - prints the value at the top of the stack
+ * @line_no: line number
+ * Return: void
+ */
+void pint(int line_no)
+{
+    if (!stack)
+    {
+        fprintf(stderr, "L%d: can't pint, stack empty\n", line_no);
+        exit(EXIT_FAILURE);
+    }
+    printf("%d\n", stack->n);
+}

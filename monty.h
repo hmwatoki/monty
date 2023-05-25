@@ -37,5 +37,6 @@ void (*f)(stack_t **stack, unsigned int line_number);
 void push(int n);
 int pop(int line_number);
 void pall(void);
+void pint(int line_no);
 void execute_instruction(char *instruction, int line_no);
 #endif
