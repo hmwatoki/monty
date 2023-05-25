@@ -61,10 +61,11 @@ current = current->prev;
  */
 void pint(int line_no)
 {
-    if (!stack)
-    {
-        fprintf(stderr, "L%d: can't pint, stack empty\n", line_no);
-        exit(EXIT_FAILURE);
-    }
-    printf("%d\n", stack->n);
+if (!stack)
+{
+fprintf(stderr, "L%d: can't pint, stack empty\n", line_no);
+exit(EXIT_FAILURE);
+}
+printf("%d\n", stack->n);
+pop(line_no);
 }
