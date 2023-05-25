@@ -104,3 +104,34 @@ a = pop(line_no);
 b = pop(line_no);
 push(a + b);
 }
+/**
+ * sub - subtracts the top element of the stack from the second top element of the stack
+ * @line_no: line number
+ * Return: void
+ */
+void sub(int line_no)
+{
+int a, b;
+if (stack_len() < 3)
+{
+fprintf(stderr, "L%d: can't sub, stack too short\n", line_no);
+exit(EXIT_FAILURE);
+}
+a = pop(line_no), b = pop(line_no);
+push(b - a);
+}
+/**
+ * stack_len - returns the number of elements in the stack
+ * Return: number of elements in the stack
+ */
+int stack_len(void)
+{
+int len = 0;
+stack_t *current = stack;
+while (current != NULL)
+{
+len++;
+current = current->next;
+}
+return (len);
+}

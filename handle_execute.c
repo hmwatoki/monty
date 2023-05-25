@@ -48,7 +48,10 @@ add(line_no);
 }
 else if (strcmp(instruction, "nop") == 0)
 {
-    
+}
+else if (strcmp(instruction, "sub") == 0)
+{
+sub(line_no);
 }
 else
 {
