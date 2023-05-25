@@ -21,13 +21,13 @@ stack = new_node;
  * pop - remove the element from the top of the stack
  * Return: integer
 */
-int pop(void)
+int pop(int line_number)
 {
 int n;
 stack_t *prev;
 if (!stack)
 {
-fprintf(stderr, "Error: can't pop an empty stack\n");
+fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 exit(EXIT_FAILURE);
 }
 prev = stack->prev;

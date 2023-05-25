@@ -35,7 +35,7 @@ void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void push(int n);
-int pop(void);
+int pop(int line_number);
 void pall(void);
 void execute_instruction(char *instruction, int line_no);
 #endif

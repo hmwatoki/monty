@@ -28,7 +28,7 @@ push(atoi(arg));
 }
 else if (strcmp(instruction, "pop") == 0)
 {
-pop();
+pop(line_no);
 }
 else if (strcmp(instruction, "pall") == 0)
 {
