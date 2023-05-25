@@ -91,3 +91,18 @@ temp = stack->n;
 stack->n = stack->next->n;
 stack->next->n = temp;   
 }
+/**
+ * add - adds the top two elements of the stack
+ * @line_no: line number
+ * Return: void
+ */
+void add(int line_no)
+{
+if (!stack || !stack->next)
+{
+fprintf(stderr, "L%d: can't add, stack too short\n", line_no);
+exit(EXIT_FAILURE);
+}
+stack->next->n += stack->n;
+pop(line_no);   
+}

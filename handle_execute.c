@@ -42,6 +42,10 @@ else if (strcmp(instruction, "swap") == 0)
 {
 swap(line_no);
 }
+else if (strcmp(instruction, "add") == 0)
+{
+add(line_no);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_no, instruction);
