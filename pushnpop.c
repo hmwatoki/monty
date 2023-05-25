@@ -1,10 +1,10 @@
 #include "monty.h"
+stack_t *stack = NULL;
 /**
  * push - add an element to the top of the stack
  * @n: integer
  * Return: void
 */
-stack_t *stack = NULL;
 void push(int n)
 {
 stack_t *new_node = malloc(sizeof(stack_t));
@@ -16,6 +16,7 @@ exit(EXIT_FAILURE);
 new_node->n = n;
 new_node->prev = stack;
 stack = new_node;
+free(new_node);
 }
 /**
  * pop - remove the element from the top of the stack
