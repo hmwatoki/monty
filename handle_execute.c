@@ -53,6 +53,10 @@ else if (strcmp(instruction, "sub") == 0)
 {
 sub(line_no);
 }
+else if (strcmp(instruction, "div") == 0)
+{
+div_op(line_no);
+}
 else
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_no, instruction);

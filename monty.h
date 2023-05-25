@@ -42,5 +42,6 @@ void swap(int line_no);
 void add(int line_no);
 void sub(int line_number);
 int stack_len(void);
+void div_op(int line_no);
 void execute_instruction(char *instruction, int line_no);
 #endif

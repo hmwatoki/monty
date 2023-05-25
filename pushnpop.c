@@ -135,3 +135,25 @@ current = current->next;
 }
 return (len);
 }
+/**
+ * div_op - divide the second top element of the stack by the top element
+ * @line_no: line number
+ * Return: void
+*/
+void div_op(int line_no)
+{
+int a,b;
+if (stack_len() < 2)
+{
+fprintf(stderr, "L%d: can't div, stack too short\n", line_no);
+exit(EXIT_FAILURE);
+}
+a = pop(line_no);
+if (a == 0)
+{
+fprintf(stderr, "L%d: division by zero\n", line_no);
+exit(EXIT_FAILURE);
+}
+b = pop(line_no);
+push(b / a);
+}
