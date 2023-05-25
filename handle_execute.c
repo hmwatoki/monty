@@ -11,20 +11,22 @@
 */
 void execute_instruction(char *instruction, int line_no)
 {
-char *arg;
 if (!instruction || instruction[0] == '#')
 {
 return;
 }
 else if (strcmp(instruction, "push") == 0)
 {
-arg = strtok(NULL, " \n\t");
-if (!arg || !isdigit(arg[0]))
+int value;
+if (sscanf(strtok(NULL, " \n\t"), "%d", &value) == 1)
+{
+push(value);
+}
+else
 {
 fprintf(stderr, "L%d: usage: push integer\n", line_no);
 exit(EXIT_FAILURE);
 }
-push(atoi(arg));
 }
 else if (strcmp(instruction, "pop") == 0)
 {

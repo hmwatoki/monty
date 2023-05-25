@@ -4,7 +4,7 @@ stack_t *stack;
  * push - add an element to the top of the stack
  * @n: integer
  * Return: void
-*/
+ */
 void push(int n)
 {
 stack_t *new_node = malloc(sizeof(stack_t));
@@ -19,8 +19,9 @@ stack = new_node;
 }
 /**
  * pop - remove the element from the top of the stack
+ * @line_number: curr line number
  * Return: integer
-*/
+ */
 int pop(int line_number)
 {
 int n;
@@ -39,19 +40,19 @@ return (n);
 /**
  * pall - print all the elements in the stack
  * Return: void
-*/
+ */
 void pall(void)
 {
-stack_t *current;
+stack_t *curr;
 if (!stack)
 {
 return;
 }
-current = stack;
-while (current != NULL)
+curr = stack;
+while (curr != NULL)
 {
-printf("%d\n", current->n);
-current = current->prev;
+printf("%d\n", curr->n);
+curr = curr->prev;
 }
 }
 /**
@@ -67,13 +68,8 @@ fprintf(stderr, "L%d: can't pint, stack empty\n", line_no);
 exit(EXIT_FAILURE);
 }
 printf("%d\n", stack->n);
-pop(line_no);
 }
-/**
- * swap - swap the top two elements of the stack
- * @line_no: line number
- * Return: void
-*/
+
 /**
  * swap - swaps the top two elements of the stack
  * @line_no: line number
@@ -82,14 +78,14 @@ pop(line_no);
 void swap(int line_no)
 {
 int temp;
-if (!stack || !stack->next)
+if (!stack || !stack->prev)
 {
 fprintf(stderr, "L%d: can't swap, stack too short\n", line_no);
 exit(EXIT_FAILURE);
 }
 temp = stack->n;
-stack->n = stack->next->n;
-stack->next->n = temp;   
+stack->n = stack->prev->n;
+stack->prev->n = temp;
 }
 /**
  * add - adds the top two elements of the stack
@@ -98,11 +94,13 @@ stack->next->n = temp;
  */
 void add(int line_no)
 {
-if (!stack || !stack->next)
+int a, b;
+if (!stack || !stack->prev)
 {
 fprintf(stderr, "L%d: can't add, stack too short\n", line_no);
 exit(EXIT_FAILURE);
 }
-stack->next->n += stack->n;
-pop(line_no);   
+a = pop(line_no);
+b = pop(line_no);
+push(a + b);
 }
